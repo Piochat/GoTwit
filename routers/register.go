@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/Piochat/GoTwit/db"
+
 	"github.com/Piochat/GoTwit/models"
 )
 
