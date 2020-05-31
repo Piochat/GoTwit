@@ -20,6 +20,7 @@ func Controllers() {
 
 	// Rutas
 	router.HandleFunc("/register", middlew.CheckDataBase(routers.Register)).Methods("POST")
+	router.HandleFunc("/login", middlew.CheckDataBase(routers.Login)).Methods("POST")
 	// End Rutas
 
 	PORT := os.Getenv("PORT")
