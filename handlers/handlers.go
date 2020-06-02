@@ -32,6 +32,7 @@ func Controllers() {
 		PORT = "8484"
 	}
 
+	log.Println(PORT)
 	// CORS
 	// Permiso a cualquiera
 	handler := cors.AllowAll().Handler(router)
