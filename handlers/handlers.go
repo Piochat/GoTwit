@@ -23,6 +23,7 @@ func Controllers() {
 	router.HandleFunc("/login", middlew.CheckDataBase(routers.Login)).Methods("POST")
 	router.HandleFunc("/profile", middlew.CheckDataBase(middlew.ValidateJWT(routers.ViewProfile))).Methods("GET")
 	router.HandleFunc("/modprofile", middlew.CheckDataBase(middlew.ValidateJWT(routers.ModProfile))).Methods("PUT")
+	router.HandleFunc("/tweet", middlew.CheckDataBase(middlew.ValidateJWT(routers.SendTweet))).Methods("POST")
 	// End Rutas
 
 	PORT := os.Getenv("PORT")
