@@ -14,7 +14,7 @@ func InsertTweet(t models.InfoTweet) (string, bool, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 	database := MongoCon.Database("gotwit")
-	collection := database.Collection("users")
+	collection := database.Collection("tweet")
 
 	items := bson.M{
 		"userid":  t.UserID,
