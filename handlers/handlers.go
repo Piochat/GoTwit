@@ -25,6 +25,7 @@ func Controllers() {
 	router.HandleFunc("/modprofile", middlew.CheckDataBase(middlew.ValidateJWT(routers.ModProfile))).Methods("PUT")
 	router.HandleFunc("/tweet", middlew.CheckDataBase(middlew.ValidateJWT(routers.SendTweet))).Methods("POST")
 	router.HandleFunc("/readtweet", middlew.CheckDataBase(middlew.ValidateJWT(routers.ReadTweets))).Methods("GET")
+	router.HandleFunc("/deltweet", middlew.CheckDataBase(middlew.ValidateJWT(routers.DeleteTweet))).Methods("DELETE")
 	// End Rutas
 
 	PORT := os.Getenv("PORT")
@@ -32,7 +33,7 @@ func Controllers() {
 		PORT = "8484"
 	}
 
-	log.Println(PORT)
+	log.Println("[PORT:]", PORT)
 	// CORS
 	// Permiso a cualquiera
 	handler := cors.AllowAll().Handler(router)
