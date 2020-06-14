@@ -31,6 +31,8 @@ func Controllers() {
 	router.HandleFunc("/uploadBanner", middlew.CheckDataBase(middlew.ValidateJWT(routers.UploadBanner))).Methods("POST")
 	router.HandleFunc("/getAvatar", middlew.CheckDataBase(routers.GetAvatar)).Methods("GET")
 	router.HandleFunc("/getBanner", middlew.CheckDataBase(routers.GetBanner)).Methods("GET")
+
+	router.HandleFunc("/followVo", middlew.CheckDataBase(middlew.ValidateJWT(routers.AltaRealacion))).Methods("POST")
 	// End Rutas
 
 	PORT := os.Getenv("PORT")
