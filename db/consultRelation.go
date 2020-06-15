@@ -25,7 +25,7 @@ func ConsultRelation(t models.Relacion) (bool, error) {
 	log.Println(result)
 	err := collection.FindOne(ctx, condition).Decode(&result)
 	if err != nil {
-		log.Println(err.Error())
+		log.Println(err.Error(), "Perro no se encontró")
 	}
 
 	return (err == nil), err

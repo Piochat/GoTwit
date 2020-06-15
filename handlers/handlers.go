@@ -35,6 +35,8 @@ func Controllers() {
 	router.HandleFunc("/followVo", middlew.CheckDataBase(middlew.ValidateJWT(routers.AltaRealacion))).Methods("POST")
 	router.HandleFunc("/delFollow", middlew.CheckDataBase(middlew.ValidateJWT(routers.BajaRelacion))).Methods("DELETE")
 	router.HandleFunc("/consultRelation", middlew.CheckDataBase(middlew.ValidateJWT(routers.ConsultRelation))).Methods("GET")
+
+	router.HandleFunc("/listUsers", middlew.CheckDataBase(middlew.ValidateJWT(routers.ListUsers))).Methods("GET")
 	// End Rutas
 
 	PORT := os.Getenv("PORT")
