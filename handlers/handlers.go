@@ -37,6 +37,8 @@ func Controllers() {
 	router.HandleFunc("/consultRelation", middlew.CheckDataBase(middlew.ValidateJWT(routers.ConsultRelation))).Methods("GET")
 
 	router.HandleFunc("/listUsers", middlew.CheckDataBase(middlew.ValidateJWT(routers.ListUsers))).Methods("GET")
+
+	router.HandleFunc("/tweetsFollower", middlew.CheckDataBase(middlew.ValidateJWT(routers.ReadTweetsFollower))).Methods("GET")
 	// End Rutas
 
 	PORT := os.Getenv("PORT")
